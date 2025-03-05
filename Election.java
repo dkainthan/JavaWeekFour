@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.NumberFormat; 
 public class Election {
     public static void main(String[]args) {
         double Awbrey_nyVotes; 
@@ -37,12 +38,17 @@ public class Election {
         totalAwbrey = Awbrey_nyVotes + Awbrey_njVotes + Awbrey_conneticutVotes; 
         totalMartinez = Martinez_nyVotes + Martinez_njVotes + Martinez_conneticutVotes; 
         totalVotes = Awbrey_nyVotes + Awbrey_njVotes + Awbrey_conneticutVotes + Martinez_nyVotes + Martinez_njVotes + Martinez_conneticutVotes; 
-        percentageAwbrey = (totalAwbrey/totalVotes) * 100; 
-        percentageMartinez = (totalMartinez/totalVotes) * 100; 
+        percentageAwbrey = (totalAwbrey/totalVotes) ; 
+        percentageMartinez = (totalMartinez/totalVotes); 
+
+        NumberFormat percent = NumberFormat.getPercentInstance(); 
+
+    
+        
 
        System.out.println("Candidate                    Votes       Percentage"); 
-       System.out.println("Awbrey                    " + totalAwbrey + "     " + percentageAwbrey);  
-       System.out.println("Martinez                  " + totalMartinez + "    " + percentageMartinez); 
+       System.out.println("Awbrey                    " + totalAwbrey + "     " + "     " + (percent.format(percentageAwbrey)));  
+       System.out.println("Martinez                  " + totalMartinez + "    " + "    " + (percent.format(percentageMartinez))); 
        System.out.println("Total Votes:      " + totalVotes); 
 
 
